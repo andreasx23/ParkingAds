@@ -1,0 +1,17 @@
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.MessageBroker.deps.json
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.MessageBroker.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ref\ParkingAds.MessageBroker.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.MessageBroker.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.AssemblyInfoInputs.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.AssemblyInfo.cs
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.csproj.CoreCompileInputs.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ref\ParkingAds.MessageBroker.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.csproj.AssemblyReference.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.Model.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.Model.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.Resx.QueueNames.resources
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.csproj.GenerateResource.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.csproj.CopyComplete

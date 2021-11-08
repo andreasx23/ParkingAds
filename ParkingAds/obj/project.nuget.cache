@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "K188hryE5vVtPKMWsdCGryWnPO/ZgjfABLPmQIvEJR33TVD4aXleAErX8uKEp4S4fn5Xqg+qaq5xBTn52AbW2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds\\ParkingAds.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andreas\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}

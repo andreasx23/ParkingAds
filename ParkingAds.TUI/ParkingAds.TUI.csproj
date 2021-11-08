@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.12" />
+    <PackageReference Include="NLog.Config" Version="4.7.12" />
+    <PackageReference Include="NLog.Schema" Version="4.7.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParkingAds.MessageBroker\ParkingAds.MessageBroker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.Config" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+</Project>
