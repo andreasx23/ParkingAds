@@ -23,13 +23,6 @@ namespace ParkingAds.MessageBroker.Consumers
 
         public void ConsumeLogs()
         {
-            //LogMessage logMessage = ConsumeMessageWithPolling();
-            //if (logMessage != null)
-            //{
-            //    _logger.Debug(logMessage.Message);
-            //    if (!string.IsNullOrEmpty(logMessage.StackTrace)) _logger.Trace(logMessage.StackTrace);
-            //}
-
             foreach (LogType type in _logTypes)
             {
                 LogMessage logMessage;

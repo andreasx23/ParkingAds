@@ -17,13 +17,14 @@ namespace ParkingAds.TUI
             //}
 
             Random rand = new();
-            const string queueName = "123";
+            const string queueName = "ParkingInformation";
             new Thread(() =>
             {
                 while (true)
                 {
                     Producer<string> d = new(queueName);
-                    d.SendMessage("Test123");
+                    for (int i = 0; i < 5; i++)
+                        d.SendMessage("Aalborg has a ton of parking spaces but they're all expensive af");
                     Thread.Sleep(rand.Next(0, 1000));
                 }
             })
