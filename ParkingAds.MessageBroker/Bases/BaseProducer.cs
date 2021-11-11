@@ -25,7 +25,7 @@ namespace ParkingAds.MessageBroker.Bases
         public virtual void SendMessage(TBody input)
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            CreateQueue(out IConnection connection, out IModel channel);
+            TryCreateQueue(out IConnection connection, out IModel channel);
             LogMessage logMessage = new($"Trying to send message to {QueueName}", corId);
             using (connection)
             using (channel)

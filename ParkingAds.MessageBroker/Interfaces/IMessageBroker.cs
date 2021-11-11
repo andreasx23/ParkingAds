@@ -9,6 +9,6 @@ namespace ParkingAds.MessageBroker.Interfaces
 {
     public interface IMessageBroker
     {
-        public void CreateQueue(out IConnection connection, out IModel channel);
+        public void TryCreateQueue(out IConnection connection, out IModel channel);
     }
 }

@@ -20,6 +20,11 @@ namespace ParkingAds.MessageBroker.Bases
         private readonly IDictionary<string, object> _queueArguments;
         private readonly ConnectionFactory _factory;
 
+        public virtual string DefaultQueueHostname { get; set; }
+        public virtual int DefaultQueuePort { get; set; } = 5672; //defualt port
+        public virtual string DefaultQueueUsername { get; set; }
+        public virtual string DefaultQueuePassword { get; set; }
+
         public BaseMessageBroker(string queueName, bool isDurable = true, bool isExclusive = false, bool shouldAutoDelete = false, IDictionary<string, object> queueArguments = null)
         {
             _queueName = queueName;
@@ -28,14 +33,20 @@ namespace ParkingAds.MessageBroker.Bases
             _shouldAutoDelete = shouldAutoDelete;
             _queueArguments = queueArguments;
 
-            string hostName = ConfigurationManager.AppSettings["HostName"];
-            if (!int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) port = 5672; //defualt port
-            string userName = ConfigurationManager.AppSettings["UserName"];
-            string password = ConfigurationManager.AppSettings["Password"];
-            _factory = new() { HostName = hostName, Port = port, UserName = userName, Password = password };
+            DefaultQueueHostname = ConfigurationManager.AppSettings["HostName"];
+            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) DefaultQueuePort = port;
+            DefaultQueueUsername = ConfigurationManager.AppSettings["UserName"];
+            DefaultQueuePassword = ConfigurationManager.AppSettings["Password"];
+            _factory = new()
+            {
+                HostName = DefaultQueueHostname,
+                Port = DefaultQueuePort,
+                UserName = DefaultQueueUsername,
+                Password = DefaultQueuePassword
+            };
         }
 
-        public virtual void CreateQueue(out IConnection connection, out IModel channel)
+        public virtual void TryCreateQueue(out IConnection connection, out IModel channel)
         {
             connection = _factory.CreateConnection();
             channel = connection.CreateModel();

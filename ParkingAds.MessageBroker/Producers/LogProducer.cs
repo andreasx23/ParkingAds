@@ -18,33 +18,32 @@ namespace ParkingAds.MessageBroker.Producers
         {
         }
 
+        private void TryCreateQueue(out IConnection connection, out IModel channel, string queueName)
+        {
+            ConnectionFactory factory = new()
+            {
+                HostName = DefaultQueueHostname,
+                Port = DefaultQueuePort,
+                UserName = DefaultQueueUsername,
+                Password = DefaultQueuePassword
+            };
+            connection = factory.CreateConnection();
+            channel = connection.CreateModel();
+            channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
+        }
+
         public override void SendMessage(LogMessage message)
         {
-            string queueName = GetType().Name;
-            switch (message.LogType)
+            string queueName = message.LogType switch
             {
-                case LogType.DEBUG:
-                    queueName = QueueNames.DebugLogQueue;
-                    break;
-                case LogType.INFO:
-                    queueName = QueueNames.InfoLogQueue;
-                    break;
-                case LogType.ERROR:
-                    queueName = QueueNames.ErrorLogQueue;
-                    break;
-                case LogType.WARN:
-                    queueName = QueueNames.WarnLogQueue;
-                    break;
-                case LogType.TRACE:
-                    queueName = QueueNames.TraceLogQueue;
-                    break;
-            }
-
-            ConnectionFactory factory = new() { };
-            var connection = factory.CreateConnection();
-            var channel = connection.CreateModel();
-            channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
-
+                LogType.DEBUG => QueueNames.DebugLogQueue,
+                LogType.INFO => QueueNames.InfoLogQueue,
+                LogType.ERROR => QueueNames.ErrorLogQueue,
+                LogType.WARN => QueueNames.WarnLogQueue,
+                LogType.TRACE => QueueNames.TraceLogQueue,
+                _ => QueueNames.DefaultLogQueue,
+            };
+            TryCreateQueue(out IConnection connection, out IModel channel, queueName);
             using (connection)
             using (channel)
             {
@@ -54,12 +53,8 @@ namespace ParkingAds.MessageBroker.Producers
             }
 
             if (message.GetLogChain().Count > 0)
-            {
                 foreach (var item in message.GetLogChain())
-                {
                     SendMessage(item);
-                }
-            }
         }
     }
 }

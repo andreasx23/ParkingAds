@@ -27,7 +27,7 @@ namespace ParkingAds.MessageBroker.Bases
         public virtual TBody ConsumeMessageWithPolling()
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            CreateQueue(out IConnection connection, out IModel channel);
+            TryCreateQueue(out IConnection connection, out IModel channel);
             LogMessage logMessage = new($"Trying to consume message from {QueueName} using polling", corId);
 
             using (connection)
@@ -65,7 +65,7 @@ namespace ParkingAds.MessageBroker.Bases
         public TBody ConsumeMessage()
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            CreateQueue(out IConnection connection, out IModel channel);
+            TryCreateQueue(out IConnection connection, out IModel channel);
             LogMessage logMessage = new($"Trying to consume message from {QueueName}", corId);
 
             using (connection)
