@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DebugLogQueue" xml:space="preserve">
+  <data name="DebugLog" xml:space="preserve">
     <value>ParkingAdsDebugLog</value>
   </data>
-  <data name="DefaultLogQueue" xml:space="preserve">
+  <data name="DefaultLog" xml:space="preserve">
     <value>ParkingAdsLog</value>
   </data>
-  <data name="ErrorLogQueue" xml:space="preserve">
+  <data name="ErrorLog" xml:space="preserve">
     <value>ParkingAdsErrorLog</value>
   </data>
-  <data name="InfoLogQueue" xml:space="preserve">
+  <data name="InfoLog" xml:space="preserve">
     <value>ParkingAdsInfoLog</value>
   </data>
-  <data name="TraceLogQueue" xml:space="preserve">
+  <data name="TraceLog" xml:space="preserve">
     <value>ParkingAdsTraceLog</value>
   </data>
-  <data name="WarnLogQueue" xml:space="preserve">
+  <data name="WarnLog" xml:space="preserve">
     <value>ParkingAdsWarnLog</value>
   </data>
 </root>

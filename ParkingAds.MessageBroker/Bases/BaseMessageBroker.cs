@@ -20,10 +20,10 @@ namespace ParkingAds.MessageBroker.Bases
         private readonly IDictionary<string, object> _queueArguments;
         private readonly ConnectionFactory _factory;
 
-        public virtual string DefaultQueueHostname { get; set; }
-        public virtual int DefaultQueuePort { get; set; } = 5672; //defualt port
-        public virtual string DefaultQueueUsername { get; set; }
-        public virtual string DefaultQueuePassword { get; set; }
+        public virtual string QueueHostname { get; set; }
+        public virtual int QueuePort { get; set; } = 5672; //defualt port
+        public virtual string QueueUsername { get; set; }
+        public virtual string QueuePassword { get; set; }
 
         public BaseMessageBroker(string queueName, bool isDurable = true, bool isExclusive = false, bool shouldAutoDelete = false, IDictionary<string, object> queueArguments = null)
         {
@@ -33,16 +33,16 @@ namespace ParkingAds.MessageBroker.Bases
             _shouldAutoDelete = shouldAutoDelete;
             _queueArguments = queueArguments;
 
-            DefaultQueueHostname = ConfigurationManager.AppSettings["HostName"];
-            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) DefaultQueuePort = port;
-            DefaultQueueUsername = ConfigurationManager.AppSettings["UserName"];
-            DefaultQueuePassword = ConfigurationManager.AppSettings["Password"];
+            QueueHostname = ConfigurationManager.AppSettings["HostName"];
+            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) QueuePort = port;
+            QueueUsername = ConfigurationManager.AppSettings["UserName"];
+            QueuePassword = ConfigurationManager.AppSettings["Password"];
             _factory = new()
             {
-                HostName = DefaultQueueHostname,
-                Port = DefaultQueuePort,
-                UserName = DefaultQueueUsername,
-                Password = DefaultQueuePassword
+                HostName = QueueHostname,
+                Port = QueuePort,
+                UserName = QueueUsername,
+                Password = QueuePassword
             };
         }
 

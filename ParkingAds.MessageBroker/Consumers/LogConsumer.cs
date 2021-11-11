@@ -16,7 +16,7 @@ namespace ParkingAds.MessageBroker.Consumers
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
         private readonly Array _logTypes;
 
-        public LogConsumer() : base(QueueNames.InfoLogQueue, true, false, false, null)
+        public LogConsumer() : base(QueueNames.InfoLog, true, false, false, null)
         {
             _logTypes = Enum.GetValues(typeof(LogType));
         }
@@ -29,7 +29,7 @@ namespace ParkingAds.MessageBroker.Consumers
                 switch (type)
                 {
                     case LogType.DEBUG:
-                        QueueName = QueueNames.DebugLogQueue;
+                        QueueName = QueueNames.DebugLog;
                         logMessage = ConsumeMessage();
                         if (logMessage != null)
                         {
@@ -38,12 +38,12 @@ namespace ParkingAds.MessageBroker.Consumers
                         }
                         break;
                     case LogType.INFO:
-                        QueueName = QueueNames.InfoLogQueue;
+                        QueueName = QueueNames.InfoLog;
                         logMessage = ConsumeMessage();
                         if (logMessage != null) _logger.Info(logMessage.Exception, logMessage.Message);
                         break;
                     case LogType.ERROR:
-                        QueueName = QueueNames.ErrorLogQueue;
+                        QueueName = QueueNames.ErrorLog;
                         logMessage = ConsumeMessage();
                         if (logMessage != null)
                         {
@@ -52,7 +52,7 @@ namespace ParkingAds.MessageBroker.Consumers
                         }
                         break;
                     case LogType.WARN:
-                        QueueName = QueueNames.WarnLogQueue;
+                        QueueName = QueueNames.WarnLog;
                         logMessage = ConsumeMessage();
                         if (logMessage != null)
                         {
@@ -61,7 +61,7 @@ namespace ParkingAds.MessageBroker.Consumers
                         }
                         break;
                     case LogType.TRACE:
-                        QueueName = QueueNames.TraceLogQueue;
+                        QueueName = QueueNames.TraceLog;
                         logMessage = ConsumeMessage();
                         if (logMessage != null)
                         {

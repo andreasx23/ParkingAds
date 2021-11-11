@@ -14,7 +14,7 @@ namespace ParkingAds.MessageBroker.Producers
 {
     public class LogProducer : BaseProducer<LogMessage>
     {
-        public LogProducer() : base(QueueNames.DefaultLogQueue, true, false, false, null)
+        public LogProducer() : base(QueueNames.DefaultLog, true, false, false, null)
         {
         }
 
@@ -22,10 +22,10 @@ namespace ParkingAds.MessageBroker.Producers
         {
             ConnectionFactory factory = new()
             {
-                HostName = DefaultQueueHostname,
-                Port = DefaultQueuePort,
-                UserName = DefaultQueueUsername,
-                Password = DefaultQueuePassword
+                HostName = QueueHostname,
+                Port = QueuePort,
+                UserName = QueueUsername,
+                Password = QueuePassword
             };
             connection = factory.CreateConnection();
             channel = connection.CreateModel();
@@ -36,12 +36,12 @@ namespace ParkingAds.MessageBroker.Producers
         {
             string queueName = message.LogType switch
             {
-                LogType.DEBUG => QueueNames.DebugLogQueue,
-                LogType.INFO => QueueNames.InfoLogQueue,
-                LogType.ERROR => QueueNames.ErrorLogQueue,
-                LogType.WARN => QueueNames.WarnLogQueue,
-                LogType.TRACE => QueueNames.TraceLogQueue,
-                _ => QueueNames.DefaultLogQueue,
+                LogType.DEBUG => QueueNames.DebugLog,
+                LogType.INFO => QueueNames.InfoLog,
+                LogType.ERROR => QueueNames.ErrorLog,
+                LogType.WARN => QueueNames.WarnLog,
+                LogType.TRACE => QueueNames.TraceLog,
+                _ => QueueNames.DefaultLog,
             };
             TryCreateQueue(out IConnection connection, out IModel channel, queueName);
             using (connection)

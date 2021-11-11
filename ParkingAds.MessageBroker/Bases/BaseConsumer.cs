@@ -57,7 +57,7 @@ namespace ParkingAds.MessageBroker.Bases
                 }
                 finally
                 {
-                    _logger.SendMessage(logMessage);
+                    if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
                 }
             }
         }

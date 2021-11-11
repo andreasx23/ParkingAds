@@ -63,54 +63,54 @@ namespace ParkingAds.MessageBroker.Resx {
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsDebugLog.
         /// </summary>
-        internal static string DebugLogQueue {
+        internal static string DebugLog {
             get {
-                return ResourceManager.GetString("DebugLogQueue", resourceCulture);
+                return ResourceManager.GetString("DebugLog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsLog.
         /// </summary>
-        internal static string DefaultLogQueue {
+        internal static string DefaultLog {
             get {
-                return ResourceManager.GetString("DefaultLogQueue", resourceCulture);
+                return ResourceManager.GetString("DefaultLog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsErrorLog.
         /// </summary>
-        internal static string ErrorLogQueue {
+        internal static string ErrorLog {
             get {
-                return ResourceManager.GetString("ErrorLogQueue", resourceCulture);
+                return ResourceManager.GetString("ErrorLog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsInfoLog.
         /// </summary>
-        internal static string InfoLogQueue {
+        internal static string InfoLog {
             get {
-                return ResourceManager.GetString("InfoLogQueue", resourceCulture);
+                return ResourceManager.GetString("InfoLog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsTraceLog.
         /// </summary>
-        internal static string TraceLogQueue {
+        internal static string TraceLog {
             get {
-                return ResourceManager.GetString("TraceLogQueue", resourceCulture);
+                return ResourceManager.GetString("TraceLog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ParkingAdsWarnLog.
         /// </summary>
-        internal static string WarnLogQueue {
+        internal static string WarnLog {
             get {
-                return ResourceManager.GetString("WarnLogQueue", resourceCulture);
+                return ResourceManager.GetString("WarnLog", resourceCulture);
             }
         }
     }
