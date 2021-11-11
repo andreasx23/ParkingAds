@@ -13,6 +13,8 @@ namespace ParkingAds.MessageBroker.Bases
 {
     public abstract class BaseProducer<TBody> : BaseMessageBroker<TBody>, IProducer<TBody>
     {
+        private IConnection _connection;
+        private IModel _channel;
         private readonly static LogProducer _logger = new();
         private readonly string _queueName;
 
@@ -24,14 +26,14 @@ namespace ParkingAds.MessageBroker.Bases
         public virtual void SendMessage(TBody input)
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            TryCreateQueue(out IConnection connection, out IModel channel);
+            TryCreateQueue(ref _connection, ref _channel);
             LogMessage logMessage = new($"Trying to send message to {_queueName}", corId);
-            using (connection)
-            using (channel)
+            using (_connection)
+            using (_channel)
             {
                 string jsonSerializedTBody = JsonConvert.SerializeObject(input);
                 byte[] body = Encoding.UTF8.GetBytes(jsonSerializedTBody);
-                channel.BasicPublish(exchange: string.Empty, routingKey: _queueName, basicProperties: null, body: body);
+                _channel.BasicPublish(exchange: string.Empty, routingKey: _queueName, basicProperties: null, body: body);
                 logMessage.AddMessageToLogChain("Message sent successfully");
                 _logger.SendMessage(logMessage);
             }

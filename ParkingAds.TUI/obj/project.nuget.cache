@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aKge+70yiPTM3OMV0GY51+t0lFSZBG57qvScvObkjKuukkofh/xDtUodp8Jfu8nLBL9ibdPje2Q5zZSxqqaSRw==",
+  "dgSpecHash": "YNaLwf1xfGfHbOvBifQDP0jgo6LLUSFmrLDGOxBJU/IUnM1/NIAdP3NvDmsg59n0LzTimgm1AnkWDeyiHsBgMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\andre\\.nuget\\packages\\nlog.config\\4.7.12\\nlog.config.4.7.12.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\nlog.schema\\4.7.12\\nlog.schema.4.7.12.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

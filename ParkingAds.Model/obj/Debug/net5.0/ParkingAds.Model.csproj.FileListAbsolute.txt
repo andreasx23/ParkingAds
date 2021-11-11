@@ -13,7 +13,6 @@ C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\bin\Debug\net5.0\ParkingAds.M
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\bin\Debug\net5.0\ParkingAds.Model.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\bin\Debug\net5.0\ref\ParkingAds.Model.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\bin\Debug\net5.0\ParkingAds.Model.pdb
-C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.csproj.AssemblyReference.cache
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.AssemblyInfoInputs.cache
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.AssemblyInfo.cs

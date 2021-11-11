@@ -18,12 +18,12 @@ namespace ParkingAds.MessageBroker.Bases
         private readonly bool _isExclusive;
         private readonly bool _shouldAutoDelete;
         private readonly IDictionary<string, object> _queueArguments;
-        private readonly ConnectionFactory _factory;
 
         public virtual string QueueHostname { get; set; }
         public virtual int QueuePort { get; set; } = 5672; //defualt port
         public virtual string QueueUsername { get; set; }
         public virtual string QueuePassword { get; set; }
+        private readonly ConnectionFactory _factory;
 
         public BaseMessageBroker(string queueName, bool isDurable = true, bool isExclusive = false, bool shouldAutoDelete = false, IDictionary<string, object> queueArguments = null)
         {
@@ -46,10 +46,12 @@ namespace ParkingAds.MessageBroker.Bases
             };
         }
 
-        public virtual void TryCreateQueue(out IConnection connection, out IModel channel)
+        public virtual void TryCreateQueue(ref IConnection connection, ref IModel channel)
         {
-            connection = _factory.CreateConnection();
-            channel = connection.CreateModel();
+            if (connection == null || !connection.IsOpen)
+                connection = _factory.CreateConnection();
+            if (channel == null || !channel.IsOpen)
+                channel = connection.CreateModel();
             channel.QueueDeclare(queue: _queueName, durable: _isDurable, exclusive: _isExclusive, autoDelete: _shouldAutoDelete, arguments: _queueArguments);
         }
     }

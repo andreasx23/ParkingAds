@@ -185,6 +185,10 @@
             "NLog.Schema": {
               "target": "Package",
               "version": "[4.7.12, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.13.0, )"
             }
           },
           "imports": [

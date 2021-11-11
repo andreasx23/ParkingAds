@@ -61,6 +61,15 @@
           "lib/netstandard2.0/RabbitMQ.Client.dll": {}
         }
       },
+      "RestSharp/106.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -379,6 +388,22 @@
         "rabbitmq.client.nuspec"
       ]
     },
+    "RestSharp/106.13.0": {
+      "sha512": "vwUdmmtC5vtePeNfBWnFcixBF2KjUeVv3ss4ZFzCIkOf7NB7W/9qX8JNZD9DOrz2yGk4AJW8k9znwgPZhnoiNg==",
+      "type": "package",
+      "path": "restsharp/106.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.13.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "System.Configuration.ConfigurationManager/6.0.0": {
       "sha512": "7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==",
       "type": "package",
@@ -677,7 +702,8 @@
       "NLog >= 4.7.12",
       "NLog.Config >= 4.7.12",
       "NLog.Schema >= 4.7.12",
-      "ParkingAds.MessageBroker >= 1.0.0"
+      "ParkingAds.MessageBroker >= 1.0.0",
+      "RestSharp >= 106.13.0"
     ]
   },
   "packageFolders": {
@@ -734,6 +760,10 @@
           "NLog.Schema": {
             "target": "Package",
             "version": "[4.7.12, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[106.13.0, )"
           }
         },
         "imports": [
