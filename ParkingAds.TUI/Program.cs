@@ -63,7 +63,7 @@ namespace ParkingAds.TUI
              * Wiretap consumer
              * Consumes the message and sends to another queue. If EnableWiretap is true it will print the message acting like were doing wiretap
             */
-            int wiretapConsumers = 1;
+            int wiretapConsumers = 4;
             for (int i = 0; i < wiretapConsumers; i++)
             {
                 new Thread(() =>
@@ -78,19 +78,20 @@ namespace ParkingAds.TUI
             }
 
             //ParkingInformation consumers
-            int parkingInformationConsumers = 1;
+            int parkingInformationConsumers = 5;
             for (int i = 0; i < parkingInformationConsumers; i++)
             {
                 new Thread(() =>
                 {
                     ParkingInformationConsumer consumer = new(queueName);
+                    int id = i + 1;
                     while (true)
                     {
                         var message = consumer.ConsumeMessage();
                         if (message != null)
                         {
-                            Console.WriteLine(message.ParkingInformation);
-                            Thread.Sleep(rand.Next(0, 250));
+                            Console.WriteLine($"Id: {id} says {message.ParkingInformation}");
+                            //Thread.Sleep(rand.Next(0, 250));
                         }
                     }
                 })
@@ -98,7 +99,7 @@ namespace ParkingAds.TUI
             }
 
             //Logging consumers
-            int loggingConsumers = 1;
+            int loggingConsumers = 10;
             for (int i = 0; i < loggingConsumers; i++)
             {
                 new Thread(() =>

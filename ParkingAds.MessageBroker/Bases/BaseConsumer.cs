@@ -28,35 +28,31 @@ namespace ParkingAds.MessageBroker.Bases
         {
             Guid corId = LogMessage.GenerateCorrelationId();
             LogMessage logMessage = new($"Trying to consume message from {QueueName} using polling", corId);
-            using (IConnection connection = _factory.CreateConnection())
-            using (IModel channel = connection.CreateModel())
+            try
             {
-                try
+                TryCreateQueue(_channel);
+                BasicGetResult msg = _channel.BasicGet(QueueName, false);
+                const int sleepOneSecondInMs = 1000;
+                while (msg == null)
                 {
-                    TryCreateQueue(channel);
-                    BasicGetResult msg = channel.BasicGet(QueueName, false);
-                    const int sleepOneSecondInMs = 1000;
-                    while (msg == null)
-                    {
-                        //Thread.Sleep(sleepOneSecondInMs);
-                        msg = channel.BasicGet(QueueName, false);
-                    }
-                    channel.BasicAck(msg.DeliveryTag, false);
-                    byte[] body = msg.Body.ToArray();
-                    string message = Encoding.UTF8.GetString(body);
-                    TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);                    
-                    logMessage.AddMessageToLogChain("Message consumed successfully");
-                    return jsonDeserializedTBody;
+                    //Thread.Sleep(sleepOneSecondInMs);
+                    msg = _channel.BasicGet(QueueName, false);
                 }
-                catch (Exception e)
-                {
-                    logMessage.AddMessageToLogChain($"An exception has occured returning default value of {typeof(TBody)}", e, e.StackTrace);
-                    return default;
-                }
-                finally
-                {
-                    if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
-                }
+                _channel.BasicAck(msg.DeliveryTag, false);
+                byte[] body = msg.Body.ToArray();
+                string message = Encoding.UTF8.GetString(body);
+                TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
+                logMessage.AddMessageToLogChain("Message consumed successfully");
+                return jsonDeserializedTBody;
+            }
+            catch (Exception e)
+            {
+                logMessage.AddMessageToLogChain($"An exception has occured returning default value of {typeof(TBody)}", e, e.StackTrace);
+                return default;
+            }
+            finally
+            {
+                if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
             }
         }
 
@@ -64,30 +60,26 @@ namespace ParkingAds.MessageBroker.Bases
         {
             Guid corId = LogMessage.GenerateCorrelationId();
             LogMessage logMessage = new($"Trying to consume message from {QueueName}", corId);
-            using (IConnection connection = _factory.CreateConnection())
-            using (IModel channel = connection.CreateModel())
+            try
             {
-                try
-                {
-                    TryCreateQueue(channel);
-                    BasicGetResult msg = channel.BasicGet(QueueName, false);
-                    if (msg == null) return default;
-                    channel.BasicAck(msg.DeliveryTag, false);
-                    byte[] body = msg.Body.ToArray();
-                    string message = Encoding.UTF8.GetString(body);
-                    TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
-                    logMessage.AddMessageToLogChain("Message consumed successfully");
-                    return jsonDeserializedTBody;
-                }
-                catch (Exception e)
-                {
-                    logMessage.AddMessageToLogChain($"An exception has occured returning default value of {typeof(TBody)}", e, e.StackTrace);
-                    return default;
-                }
-                finally
-                {
-                    if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
-                }
+                TryCreateQueue(_channel);
+                BasicGetResult msg = _channel.BasicGet(QueueName, false);
+                if (msg == null) return default;
+                _channel.BasicAck(msg.DeliveryTag, false);
+                byte[] body = msg.Body.ToArray();
+                string message = Encoding.UTF8.GetString(body);
+                TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
+                logMessage.AddMessageToLogChain("Message consumed successfully");
+                return jsonDeserializedTBody;
+            }
+            catch (Exception e)
+            {
+                logMessage.AddMessageToLogChain($"An exception has occured returning default value of {typeof(TBody)}", e, e.StackTrace);
+                return default;
+            }
+            finally
+            {
+                if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
             }
         }
     }

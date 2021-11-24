@@ -19,20 +19,6 @@ namespace ParkingAds.MessageBroker.Producers
         {
         }
 
-        private void TryCreateQueue(out IConnection connection, out IModel channel, string queueName)
-        {
-            ConnectionFactory factory = new()
-            {
-                HostName = QueueHostname,
-                Port = QueuePort,
-                UserName = QueueUsername,
-                Password = QueuePassword
-            };
-            connection = factory.CreateConnection();
-            channel = connection.CreateModel();
-            channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
-        }
-
         public override void SendMessage(LogMessage message)
         {
             string queueName = message.LogType switch
@@ -44,14 +30,10 @@ namespace ParkingAds.MessageBroker.Producers
                 LogType.TRACE => QueueNames.TraceLog,
                 _ => QueueNames.DefaultLog,
             };
-            TryCreateQueue(out IConnection connection, out IModel channel, queueName);
-            using (connection)
-            using (channel)
-            {
-                string jsonSerializedTBody = JsonConvert.SerializeObject(message);
-                byte[] body = Encoding.UTF8.GetBytes(jsonSerializedTBody);
-                channel.BasicPublish(exchange: string.Empty, routingKey: queueName, basicProperties: null, body: body);
-            }
+            TryCreateQueue(_channel, queueName);
+            string jsonSerializedTBody = JsonConvert.SerializeObject(message);
+            byte[] body = Encoding.UTF8.GetBytes(jsonSerializedTBody);
+            _channel.BasicPublish(exchange: string.Empty, routingKey: queueName, basicProperties: null, body: body);
 
             if (message.GetLogChain().Count > 0)
                 foreach (var item in message.GetLogChain())

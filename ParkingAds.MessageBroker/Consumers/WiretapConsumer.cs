@@ -23,20 +23,16 @@ namespace ParkingAds.MessageBroker.Consumers
 
         public void ConsumeWiretapMessages()
         {
-            using (IConnection connection = _factory.CreateConnection())
-            using (IModel channel = connection.CreateModel())
-            {
-                TryCreateQueue(channel);
-                BasicGetResult msg = channel.BasicGet(QueueName, false);
-                if (msg == null) return;
-                channel.BasicAck(msg.DeliveryTag, false);
-                byte[] body = msg.Body.ToArray();
-                string message = Encoding.UTF8.GetString(body);
-                if (!HasWiretapObject(message)) throw new Exception(); //TODO HANDLE THIS
-                if (isWiretapEnabled()) WriteToFile(message);
-                WiretapMessage wiretap = RetrieveWiretapMessage(message);
-                _producer.SendMessage(message, wiretap.QueueDestination);
-            }
+            TryCreateQueue(_channel);
+            BasicGetResult msg = _channel.BasicGet(QueueName, false);
+            if (msg == null) return;
+            _channel.BasicAck(msg.DeliveryTag, false);
+            byte[] body = msg.Body.ToArray();
+            string message = Encoding.UTF8.GetString(body);
+            if (!HasWiretapObject(message)) throw new Exception(); //TODO HANDLE THIS
+            if (isWiretapEnabled()) WriteToFile(message);
+            WiretapMessage wiretap = RetrieveWiretapMessage(message);
+            _producer.SendMessage(message, wiretap.QueueDestination);
         }
 
         private void WriteToFile(string objectToWrite) //TODO IMPLEMENT WRITE TO FILE

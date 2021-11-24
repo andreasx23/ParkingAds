@@ -20,3 +20,4 @@ C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.Model\obj\Debug\net5.0
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.dll
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ref\ParkingAds.Model.dll
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.Model\obj\Debug\net5.0\ParkingAds.Model.csproj.AssemblyReference.cache

@@ -42,3 +42,4 @@ C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds\obj\Debug\net5.0\Parki
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds\obj\Debug\net5.0\ref\ParkingAds.dll
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.pdb
 C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.genruntimeconfig.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.csproj.AssemblyReference.cache

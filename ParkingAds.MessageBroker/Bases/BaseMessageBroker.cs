@@ -13,17 +13,20 @@ namespace ParkingAds.MessageBroker.Bases
 {
     public abstract class BaseMessageBroker<TBody> : IMessageBroker
     {
-        private readonly string _queueName;
-        private readonly bool _isDurable;
-        private readonly bool _isExclusive;
-        private readonly bool _shouldAutoDelete;
-        private readonly IDictionary<string, object> _queueArguments;
+        private string _queueName;
+        private bool _isDurable;
+        private bool _isExclusive;
+        private bool _shouldAutoDelete;
+        private IDictionary<string, object> _queueArguments;
 
         public virtual string QueueHostname { get; set; }
         public virtual int QueuePort { get; set; } = 5672; //defualt port
         public virtual string QueueUsername { get; set; }
         public virtual string QueuePassword { get; set; }
+
         public readonly ConnectionFactory _factory;
+        public readonly IConnection _connection;
+        public readonly IModel _channel;
 
         public BaseMessageBroker(string queueName, bool isDurable = true, bool isExclusive = false, bool shouldAutoDelete = false, IDictionary<string, object> queueArguments = null)
         {
@@ -44,21 +47,8 @@ namespace ParkingAds.MessageBroker.Bases
                 UserName = QueueUsername,
                 Password = QueuePassword
             };
-        }
-
-        public BaseMessageBroker()
-        {
-            QueueHostname = ConfigurationManager.AppSettings["HostName"];
-            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) QueuePort = port;
-            QueueUsername = ConfigurationManager.AppSettings["UserName"];
-            QueuePassword = ConfigurationManager.AppSettings["Password"];
-            _factory = new()
-            {
-                HostName = QueueHostname,
-                Port = QueuePort,
-                UserName = QueueUsername,
-                Password = QueuePassword
-            };
+            _connection = _factory.CreateConnection();
+            _channel = _connection.CreateModel();
         }
 
         public virtual void TryCreateQueue(IModel channel, string queueName = "")

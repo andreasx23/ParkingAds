@@ -26,16 +26,12 @@ namespace ParkingAds.MessageBroker.Bases
         {
             Guid corId = LogMessage.GenerateCorrelationId();            
             LogMessage logMessage = new($"Trying to send message to {_queueName}", corId);
-            using (IConnection connection = _factory.CreateConnection())
-            using (IModel channel = connection.CreateModel())
-            {
-                TryCreateQueue(channel);
-                string jsonSerializedTBody = JsonConvert.SerializeObject(input);
-                byte[] body = Encoding.UTF8.GetBytes(jsonSerializedTBody);
-                channel.BasicPublish(exchange: string.Empty, routingKey: _queueName, basicProperties: null, body: body);
-                logMessage.AddMessageToLogChain("Message sent successfully");
-                _logger.SendMessage(logMessage);
-            }
+            TryCreateQueue(_channel);
+            string jsonSerializedTBody = JsonConvert.SerializeObject(input);
+            byte[] body = Encoding.UTF8.GetBytes(jsonSerializedTBody);
+            _channel.BasicPublish(exchange: string.Empty, routingKey: _queueName, basicProperties: null, body: body);
+            logMessage.AddMessageToLogChain("Message sent successfully");
+            _logger.SendMessage(logMessage);
         }
     }
 }
