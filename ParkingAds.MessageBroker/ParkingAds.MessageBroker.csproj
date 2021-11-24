@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ParkingAds.MessageModel\ParkingAds.MessageModel.csproj" />
     <ProjectReference Include="..\ParkingAds.Model\ParkingAds.Model.csproj" />
   </ItemGroup>
 

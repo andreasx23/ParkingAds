@@ -1,6 +1,7 @@
 ﻿using NLog;
 using ParkingAds.MessageBroker.Bases;
 using ParkingAds.MessageBroker.Resx;
+using ParkingAds.MessageModel;
 using ParkingAds.Model;
 using ParkingAds.Model.Enums;
 using System;

@@ -1,0 +1,15 @@
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ParkingAds.MessageModel.deps.json
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ref\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ParkingAds.MessageModel.pdb
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ParkingAds.Model.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\bin\Debug\net5.0\ParkingAds.Model.pdb
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.csproj.AssemblyReference.cache
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.AssemblyInfoInputs.cache
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.AssemblyInfo.cs
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.csproj.CopyComplete
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ref\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageModel\obj\Debug\net5.0\ParkingAds.MessageModel.pdb

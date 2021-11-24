@@ -1,0 +1,15 @@
+﻿using ParkingAds.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ParkingAds.MessageModel
+{
+    public class ParkingInformationMessage
+    {
+        public ParkingInformation ParkingInformation { get; set; }
+        public HistoryMessage History { get; set; } = new();
+    }
+}

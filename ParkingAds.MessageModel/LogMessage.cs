@@ -6,14 +6,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ParkingAds.Model
+namespace ParkingAds.MessageModel
 {
     public class LogMessage
     {
         public List<LogMessage> _logChain { get; set; } = new();
 
-        public Guid Id { get;  set; }
-        public Exception Exception { get;  set; }
+        public Guid Id { get; set; }
+        public Exception Exception { get; set; }
         private string _message;
         public string Message
         {
@@ -29,9 +29,9 @@ namespace ParkingAds.Model
                     _message = value;
             }
         }
-        public string StackTrace { get;  set; }
-        public Guid? CorrelationId { get;  set; }
-        public LogType LogType { get;  set; }        
+        public string StackTrace { get; set; }
+        public Guid? CorrelationId { get; set; } = null;
+        public LogType LogType { get; set; }
 
         public LogMessage(string message, Guid? correlationId = null)
         {

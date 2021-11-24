@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ParkingAds.MessageBroker.Bases;
 using ParkingAds.MessageBroker.Resx;
+using ParkingAds.MessageModel;
 using ParkingAds.Model;
 using ParkingAds.Model.Enums;
 using RabbitMQ.Client;

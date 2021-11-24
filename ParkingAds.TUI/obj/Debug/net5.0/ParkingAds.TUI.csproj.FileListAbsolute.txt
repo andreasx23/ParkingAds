@@ -77,3 +77,5 @@ C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\obj\Debug\net5.0\ref\ParkingAds
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\obj\Debug\net5.0\ParkingAds.TUI.pdb
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\obj\Debug\net5.0\ParkingAds.TUI.genruntimeconfig.cache
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\bin\Debug\net5.0\RestSharp.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\bin\Debug\net5.0\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.TUI\bin\Debug\net5.0\ParkingAds.MessageModel.pdb

@@ -32,3 +32,5 @@ C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\Park
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ref\ParkingAds.MessageBroker.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\obj\Debug\net5.0\ParkingAds.MessageBroker.pdb
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.MessageModel.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.MessageBroker\bin\Debug\net5.0\ParkingAds.MessageModel.pdb

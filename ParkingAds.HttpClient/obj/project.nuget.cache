@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "FBcQp+BcF0s/Hq8jmX6BWOxvZWwGPOBKIIOIBv3hKYhSSwcDKujRz9fdQesoorsso/8ZvM3K85tByqf6x7jwqQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andre\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512"
+  ],
+  "logs": []
+}

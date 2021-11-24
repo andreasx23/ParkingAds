@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using NLog;
+using ParkingAds.HttpClient;
 using ParkingAds.MessageBroker;
 using ParkingAds.MessageBroker.Consumers;
 using ParkingAds.Model;
@@ -14,28 +15,8 @@ namespace ParkingAds.TUI
 {
     public class Program
     {
-        private static readonly RestClient _client = new();
-
-        private static IRestResponse Get(string uri)
-        {
-            IRestRequest request = new RestRequest($"{uri}", Method.GET);
-            IRestResponse response = _client.Execute(request);
-            return response;
-        }
-
-        private static string GetAd()
-        {
-            var ad = Get("http://psuaddservice.fenris.ucn.dk/");
-            return ad.StatusCode == HttpStatusCode.OK ? ad.Content : string.Empty;
-        }
-
-        private static List<ParkingInformation> GetParkingInformations()
-        {
-            var parkingInfo = Get("http://psuparkingservice.fenris.ucn.dk/service");
-            if (parkingInfo.StatusCode != HttpStatusCode.OK) return new();
-            List<ParkingInformation> parkingInformation = JsonConvert.DeserializeObject<List<ParkingInformation>>(parkingInfo.Content);
-            return parkingInformation;
-        }
+        private static readonly AdClient _adClient = new();
+        private static readonly ParkingInformationClient _parkingInformationClient = new();
 
         public static void Main(string[] args)
         {
@@ -45,11 +26,11 @@ namespace ParkingAds.TUI
             {
                 while (true)
                 {
-                    var parkingInfos = GetParkingInformations();                    
+                    var parkingInfos = _parkingInformationClient.GetParkingInformations();                  
                     if (parkingInfos.Count > 0)
                     {
                         Producer<ParkingInformation> producer = new(queueName);
-                        var ad = GetAd();
+                        var ad = _adClient.GetAd();
                         for (int i = 0; i < rand.Next(0, 5) + 1; i++)
                         {
                             var info = parkingInfos[rand.Next(0, parkingInfos.Count)];

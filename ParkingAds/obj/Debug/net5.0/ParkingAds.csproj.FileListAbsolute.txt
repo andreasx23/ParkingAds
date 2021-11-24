@@ -30,7 +30,6 @@ C:\Users\andre\Desktop\ParkingAds\ParkingAds\bin\Debug\net5.0\ParkingAds.runtime
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\bin\Debug\net5.0\ParkingAds.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\bin\Debug\net5.0\ref\ParkingAds.dll
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\bin\Debug\net5.0\ParkingAds.pdb
-C:\Users\andre\Desktop\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.csproj.AssemblyReference.cache
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.AssemblyInfoInputs.cache
 C:\Users\andre\Desktop\ParkingAds\ParkingAds\obj\Debug\net5.0\ParkingAds.AssemblyInfo.cs

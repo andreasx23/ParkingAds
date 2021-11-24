@@ -10,6 +10,7 @@
         "dependencies": {
           "NLog": "4.7.12",
           "Newtonsoft.Json": "13.0.1",
+          "ParkingAds.MessageModel": "1.0.0",
           "ParkingAds.Model": "1.0.0",
           "RabbitMQ.Client": "6.2.2",
           "System.Configuration.ConfigurationManager": "6.0.0"
@@ -171,6 +172,14 @@
           }
         }
       },
+      "ParkingAds.MessageModel/1.0.0": {
+        "dependencies": {
+          "ParkingAds.Model": "1.0.0"
+        },
+        "runtime": {
+          "ParkingAds.MessageModel.dll": {}
+        }
+      },
       "ParkingAds.Model/1.0.0": {
         "runtime": {
           "ParkingAds.Model.dll": {}
@@ -274,6 +283,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ParkingAds.MessageModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ParkingAds.Model/1.0.0": {
       "type": "project",

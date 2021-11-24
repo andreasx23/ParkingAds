@@ -224,12 +224,28 @@
           }
         }
       },
+      "ParkingAds.HttpClient/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "ParkingAds.Model": "1.0.0",
+          "RestSharp": "106.13.0"
+        },
+        "compile": {
+          "bin/placeholder/ParkingAds.HttpClient.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingAds.HttpClient.dll": {}
+        }
+      },
       "ParkingAds.MessageBroker/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "NLog": "4.7.12",
           "Newtonsoft.Json": "13.0.1",
+          "ParkingAds.MessageModel": "1.0.0",
           "ParkingAds.Model": "1.0.0",
           "RabbitMQ.Client": "6.2.2",
           "System.Configuration.ConfigurationManager": "6.0.0"
@@ -239,6 +255,19 @@
         },
         "runtime": {
           "bin/placeholder/ParkingAds.MessageBroker.dll": {}
+        }
+      },
+      "ParkingAds.MessageModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ParkingAds.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ParkingAds.MessageModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingAds.MessageModel.dll": {}
         }
       },
       "ParkingAds.Model/1.0.0": {
@@ -686,10 +715,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ParkingAds.HttpClient/1.0.0": {
+      "type": "project",
+      "path": "../ParkingAds.HttpClient/ParkingAds.HttpClient.csproj",
+      "msbuildProject": "../ParkingAds.HttpClient/ParkingAds.HttpClient.csproj"
+    },
     "ParkingAds.MessageBroker/1.0.0": {
       "type": "project",
       "path": "../ParkingAds.MessageBroker/ParkingAds.MessageBroker.csproj",
       "msbuildProject": "../ParkingAds.MessageBroker/ParkingAds.MessageBroker.csproj"
+    },
+    "ParkingAds.MessageModel/1.0.0": {
+      "type": "project",
+      "path": "../ParkingAds.MessageModel/ParkingAds.MessageModel.csproj",
+      "msbuildProject": "../ParkingAds.MessageModel/ParkingAds.MessageModel.csproj"
     },
     "ParkingAds.Model/1.0.0": {
       "type": "project",
@@ -702,6 +741,7 @@
       "NLog >= 4.7.12",
       "NLog.Config >= 4.7.12",
       "NLog.Schema >= 4.7.12",
+      "ParkingAds.HttpClient >= 1.0.0",
       "ParkingAds.MessageBroker >= 1.0.0",
       "RestSharp >= 106.13.0"
     ]
@@ -733,6 +773,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
+              "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj"
+            },
             "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
               "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj"
             }
