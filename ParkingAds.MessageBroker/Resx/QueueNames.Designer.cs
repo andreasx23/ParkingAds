@@ -113,5 +113,14 @@ namespace ParkingAds.MessageBroker.Resx {
                 return ResourceManager.GetString("WarnLog", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ParkingAdsWiretap.
+        /// </summary>
+        internal static string Wiretap {
+            get {
+                return ResourceManager.GetString("Wiretap", resourceCulture);
+            }
+        }
     }
 }

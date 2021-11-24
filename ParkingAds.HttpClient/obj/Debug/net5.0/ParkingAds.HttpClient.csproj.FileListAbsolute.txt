@@ -1,0 +1,15 @@
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ParkingAds.HttpClient.deps.json
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ParkingAds.HttpClient.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ref\ParkingAds.HttpClient.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ParkingAds.HttpClient.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ParkingAds.Model.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\bin\Debug\net5.0\ParkingAds.Model.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.csproj.AssemblyReference.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.AssemblyInfoInputs.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.AssemblyInfo.cs
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.csproj.CoreCompileInputs.cache
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ref\ParkingAds.HttpClient.dll
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.pdb
+C:\Users\Andreas\Desktop\ParkingAds\ParkingAds\ParkingAds.HttpClient\obj\Debug\net5.0\ParkingAds.HttpClient.csproj.CopyComplete

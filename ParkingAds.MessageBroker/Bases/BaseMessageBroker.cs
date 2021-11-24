@@ -23,7 +23,7 @@ namespace ParkingAds.MessageBroker.Bases
         public virtual int QueuePort { get; set; } = 5672; //defualt port
         public virtual string QueueUsername { get; set; }
         public virtual string QueuePassword { get; set; }
-        private readonly ConnectionFactory _factory;
+        public readonly ConnectionFactory _factory;
 
         public BaseMessageBroker(string queueName, bool isDurable = true, bool isExclusive = false, bool shouldAutoDelete = false, IDictionary<string, object> queueArguments = null)
         {
@@ -46,13 +46,31 @@ namespace ParkingAds.MessageBroker.Bases
             };
         }
 
-        public virtual void TryCreateQueue(ref IConnection connection, ref IModel channel)
+        public BaseMessageBroker()
         {
-            if (connection == null || !connection.IsOpen)
-                connection = _factory.CreateConnection();
-            if (channel == null || !channel.IsOpen)
-                channel = connection.CreateModel();
-            channel.QueueDeclare(queue: _queueName, durable: _isDurable, exclusive: _isExclusive, autoDelete: _shouldAutoDelete, arguments: _queueArguments);
+            QueueHostname = ConfigurationManager.AppSettings["HostName"];
+            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) QueuePort = port;
+            QueueUsername = ConfigurationManager.AppSettings["UserName"];
+            QueuePassword = ConfigurationManager.AppSettings["Password"];
+            _factory = new()
+            {
+                HostName = QueueHostname,
+                Port = QueuePort,
+                UserName = QueueUsername,
+                Password = QueuePassword
+            };
+        }
+
+        public virtual void TryCreateQueue(IModel channel, string queueName = "")
+        {
+            try
+            {
+                channel.QueueDeclare(queue: string.IsNullOrEmpty(queueName) ? _queueName : queueName, durable: _isDurable, exclusive: _isExclusive, autoDelete: _shouldAutoDelete, arguments: _queueArguments);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"EXCEPTION: {e.Message}");
+            }
         }
     }
 }

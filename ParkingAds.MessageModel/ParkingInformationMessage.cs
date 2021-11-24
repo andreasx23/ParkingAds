@@ -9,7 +9,8 @@ namespace ParkingAds.MessageModel
 {
     public class ParkingInformationMessage
     {
-        public ParkingInformation ParkingInformation { get; set; }
+        public ParkingInformation ParkingInformation { get; set; } = new();
         public HistoryMessage History { get; set; } = new();
+        public WiretapMessage WiretapMessage { get; set; } = new();
     }
 }

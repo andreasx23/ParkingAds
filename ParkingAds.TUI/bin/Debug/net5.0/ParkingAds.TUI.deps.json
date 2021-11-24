@@ -11,6 +11,7 @@
           "NLog": "4.7.12",
           "NLog.Config": "4.7.12",
           "NLog.Schema": "4.7.12",
+          "ParkingAds.HttpClient": "1.0.0",
           "ParkingAds.MessageBroker": "1.0.0",
           "RestSharp": "106.13.0"
         },
@@ -186,6 +187,17 @@
           }
         }
       },
+      "ParkingAds.HttpClient/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "ParkingAds.Model": "1.0.0",
+          "RestSharp": "106.13.0",
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "runtime": {
+          "ParkingAds.HttpClient.dll": {}
+        }
+      },
       "ParkingAds.MessageBroker/1.0.0": {
         "dependencies": {
           "NLog": "4.7.12",
@@ -331,6 +343,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ParkingAds.HttpClient/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ParkingAds.MessageBroker/1.0.0": {
       "type": "project",

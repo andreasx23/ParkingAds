@@ -14,10 +14,11 @@ namespace ParkingAds.Model
         public int Max { get; set; }
         public int Current { get; set; }
         public string HttpEncodedAd { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         
         public override string ToString()
         {
-            return $"{Name} har {Max - Current} ledige pladser ud af {Max}. Information opdateret: {Date}{Environment.NewLine}{HttpEncodedAd}";
+            return $"{Id} -- {Name} har {Max - Current} ledige pladser ud af {Max}. Information opdateret: {Date}{Environment.NewLine}{HttpEncodedAd}";
         }
     }
 }

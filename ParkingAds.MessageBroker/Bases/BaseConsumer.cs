@@ -16,8 +16,6 @@ namespace ParkingAds.MessageBroker.Bases
 {
     public abstract class BaseConsumer<TBody> : BaseMessageBroker<TBody>, IConsumer<TBody>
     {
-        private IConnection _connection;
-        private IModel _channel;
         private readonly static LogProducer _logger = new();
         public string QueueName { get; set; }
 
@@ -29,26 +27,24 @@ namespace ParkingAds.MessageBroker.Bases
         public virtual TBody ConsumeMessageWithPolling()
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            TryCreateQueue(ref _connection, ref _channel);
             LogMessage logMessage = new($"Trying to consume message from {QueueName} using polling", corId);
-
-            using (_connection)
-            using (_channel)
+            using (IConnection connection = _factory.CreateConnection())
+            using (IModel channel = connection.CreateModel())
             {
-                BasicGetResult msg = _channel.BasicGet(QueueName, false);
-                while (msg == null)
-                {
-                    const int sleepOneSecondInMs = 1000;
-                    Thread.Sleep(sleepOneSecondInMs);
-                    msg = _channel.BasicGet(QueueName, false);
-                }
-                byte[] body = msg.Body.ToArray();
-                string message = Encoding.UTF8.GetString(body);
-
                 try
                 {
-                    TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
-                    _channel.BasicAck(msg.DeliveryTag, false);
+                    TryCreateQueue(channel);
+                    BasicGetResult msg = channel.BasicGet(QueueName, false);
+                    const int sleepOneSecondInMs = 1000;
+                    while (msg == null)
+                    {
+                        //Thread.Sleep(sleepOneSecondInMs);
+                        msg = channel.BasicGet(QueueName, false);
+                    }
+                    channel.BasicAck(msg.DeliveryTag, false);
+                    byte[] body = msg.Body.ToArray();
+                    string message = Encoding.UTF8.GetString(body);
+                    TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);                    
                     logMessage.AddMessageToLogChain("Message consumed successfully");
                     return jsonDeserializedTBody;
                 }
@@ -67,20 +63,19 @@ namespace ParkingAds.MessageBroker.Bases
         public TBody ConsumeMessage()
         {
             Guid corId = LogMessage.GenerateCorrelationId();
-            TryCreateQueue(ref _connection, ref _channel);
             LogMessage logMessage = new($"Trying to consume message from {QueueName}", corId);
-
-            using (_connection)
-            using (_channel)
+            using (IConnection connection = _factory.CreateConnection())
+            using (IModel channel = connection.CreateModel())
             {
                 try
                 {
-                    BasicGetResult msg = _channel.BasicGet(QueueName, false);
+                    TryCreateQueue(channel);
+                    BasicGetResult msg = channel.BasicGet(QueueName, false);
                     if (msg == null) return default;
+                    channel.BasicAck(msg.DeliveryTag, false);
                     byte[] body = msg.Body.ToArray();
                     string message = Encoding.UTF8.GetString(body);
                     TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
-                    _channel.BasicAck(msg.DeliveryTag, false);
                     logMessage.AddMessageToLogChain("Message consumed successfully");
                     return jsonDeserializedTBody;
                 }

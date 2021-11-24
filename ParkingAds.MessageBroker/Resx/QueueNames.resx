@@ -135,4 +135,7 @@
   <data name="WarnLog" xml:space="preserve">
     <value>ParkingAdsWarnLog</value>
   </data>
+  <data name="Wiretap" xml:space="preserve">
+    <value>ParkingAdsWiretap</value>
+  </data>
 </root>

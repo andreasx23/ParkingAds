@@ -230,7 +230,8 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
           "ParkingAds.Model": "1.0.0",
-          "RestSharp": "106.13.0"
+          "RestSharp": "106.13.0",
+          "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "compile": {
           "bin/placeholder/ParkingAds.HttpClient.dll": {}
@@ -747,19 +748,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "C:\\Users\\Andreas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
+      "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
       "projectName": "ParkingAds.TUI",
-      "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\obj\\",
+      "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
+      "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -773,11 +774,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
-              "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj"
+            "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
+              "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj"
             },
-            "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
-              "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj"
+            "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
+              "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj"
             }
           }
         }
