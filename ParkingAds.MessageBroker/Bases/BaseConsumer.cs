@@ -28,6 +28,7 @@ namespace ParkingAds.MessageBroker.Bases
         {
             Guid corId = LogMessage.GenerateCorrelationId();
             LogMessage logMessage = new($"Trying to consume message from {QueueName} using polling", corId);
+            bool hasMessage = false;
             try
             {
                 TryCreateQueue(_channel);
@@ -35,10 +36,11 @@ namespace ParkingAds.MessageBroker.Bases
                 const int sleepOneSecondInMs = 1000;
                 while (msg == null)
                 {
-                    //Thread.Sleep(sleepOneSecondInMs);
+                    Thread.Sleep(sleepOneSecondInMs);
                     msg = _channel.BasicGet(QueueName, false);
                 }
                 _channel.BasicAck(msg.DeliveryTag, false);
+                hasMessage = true;
                 byte[] body = msg.Body.ToArray();
                 string message = Encoding.UTF8.GetString(body);
                 TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
@@ -52,7 +54,7 @@ namespace ParkingAds.MessageBroker.Bases
             }
             finally
             {
-                if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
+                if (typeof(TBody) != typeof(LogMessage) && hasMessage) _logger.SendMessage(logMessage);
             }
         }
 
@@ -60,12 +62,14 @@ namespace ParkingAds.MessageBroker.Bases
         {
             Guid corId = LogMessage.GenerateCorrelationId();
             LogMessage logMessage = new($"Trying to consume message from {QueueName}", corId);
+            bool hasMessage = false;
             try
             {
                 TryCreateQueue(_channel);
                 BasicGetResult msg = _channel.BasicGet(QueueName, false);
                 if (msg == null) return default;
                 _channel.BasicAck(msg.DeliveryTag, false);
+                hasMessage = true;
                 byte[] body = msg.Body.ToArray();
                 string message = Encoding.UTF8.GetString(body);
                 TBody jsonDeserializedTBody = JsonConvert.DeserializeObject<TBody>(message);
@@ -79,7 +83,7 @@ namespace ParkingAds.MessageBroker.Bases
             }
             finally
             {
-                if (typeof(TBody) != typeof(LogMessage)) _logger.SendMessage(logMessage);
+                if (typeof(TBody) != typeof(LogMessage) && hasMessage) _logger.SendMessage(logMessage);
             }
         }
     }
