@@ -21,7 +21,7 @@ namespace ParkingAds.HttpClient
         public string GetAd()
         {
             var ad = Get(AD_URL);
-            return ad.StatusCode == HttpStatusCode.OK ? ad.Content : string.Empty;
+            return ad.StatusCode == HttpStatusCode.OK && !ad.Content.ToLower().Contains("something bad happened") ? ad.Content : string.Empty;
         }
 
         public string GetAdMockData()
@@ -30,7 +30,7 @@ namespace ParkingAds.HttpClient
             Random rand = new();
             for (int i = 0; i < 10; i++)
             {
-                char value = (char)rand.Next('A', 'Z');
+                char value = (char)rand.Next('A', 'Z' + 1); //+ 1 to include Z
                 randomAd += value;
             }
             return randomAd;

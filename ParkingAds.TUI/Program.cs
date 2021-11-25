@@ -34,7 +34,7 @@ namespace ParkingAds.TUI
                     while (true)
                     {
                         string ad = _adClient.GetAdMockData();
-                        if (!string.IsNullOrEmpty(ad) && !ad.ToLower().Contains("something bad happened"))
+                        if (!string.IsNullOrEmpty(ad))
                             RedisSingleton.Instance.GetDatabase().StringSet(ad, ad);
                         Thread.Sleep(2000);
                     }
