@@ -22,6 +22,14 @@ namespace ParkingAds.HttpClient
 
         public List<ParkingInformation> GetParkingInformations()
         {
+            var parkingInfo = Get(PARKING_URL);
+            if (parkingInfo.StatusCode != HttpStatusCode.OK) return new();
+            List<ParkingInformation> parkingInformation = JsonConvert.DeserializeObject<List<ParkingInformation>>(parkingInfo.Content);
+            return parkingInformation;
+        }
+
+        public List<ParkingInformation> GetParkingInformationsMockData()
+        {
             Random rand = new();
             return new List<ParkingInformation>()
             {
@@ -58,11 +66,6 @@ namespace ParkingAds.HttpClient
                     Name = "København by"
                 }
             };
-
-            var parkingInfo = Get(PARKING_URL);
-            if (parkingInfo.StatusCode != HttpStatusCode.OK) return new();
-            List<ParkingInformation> parkingInformation = JsonConvert.DeserializeObject<List<ParkingInformation>>(parkingInfo.Content);
-            return parkingInformation;
         }
     }
 }

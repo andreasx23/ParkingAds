@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj": {}
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj",
         "projectName": "ParkingAds.HttpClient",
-        "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\obj\\",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
               }
             }
           }
@@ -76,17 +76,17 @@
         }
       }
     },
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj",
         "projectName": "ParkingAds.MessageBroker",
-        "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\obj\\",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,11 +100,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj"
               },
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
               }
             }
           }
@@ -155,17 +155,17 @@
         }
       }
     },
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj": {
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj",
         "projectName": "ParkingAds.MessageModel",
-        "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageModel\\obj\\",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\ParkingAds.MessageModel.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -179,8 +179,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj"
               }
             }
           }
@@ -213,17 +213,17 @@
         }
       }
     },
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
         "projectName": "ParkingAds.Model",
-        "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\obj\\",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,17 +267,81 @@
         }
       }
     },
-    "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj": {
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\ParkingAds.Singleton.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
-        "projectName": "ParkingAds.TUI",
-        "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.TUI\\obj\\",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\ParkingAds.Singleton.csproj",
+        "projectName": "ParkingAds.Singleton",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\ParkingAds.Singleton.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.88, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
+        "projectName": "ParkingAds.TUI",
+        "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\ParkingAds.TUI.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.TUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -291,11 +355,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.HttpClient\\ParkingAds.HttpClient.csproj"
               },
-              "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj"
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.MessageBroker\\ParkingAds.MessageBroker.csproj"
+              },
+              "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\ParkingAds.Singleton.csproj": {
+                "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Singleton\\ParkingAds.Singleton.csproj"
               }
             }
           }

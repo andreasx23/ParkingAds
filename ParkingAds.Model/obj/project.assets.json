@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Andreas\\.nuget\\packages\\": {}
+    "C:\\Users\\andre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
       "projectName": "ParkingAds.Model",
-      "projectPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
-      "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andreas\\Desktop\\ParkingAds\\ParkingAds\\ParkingAds.Model\\obj\\",
+      "projectPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\ParkingAds.Model.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\Desktop\\ParkingAds\\ParkingAds.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

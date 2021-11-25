@@ -6,6 +6,7 @@ using ParkingAds.MessageBroker.Consumers;
 using ParkingAds.MessageBroker.Producers;
 using ParkingAds.MessageModel;
 using ParkingAds.Model;
+using ParkingAds.Singleton;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,25 @@ namespace ParkingAds.TUI
         public static void Main(string[] args)
         {
             Random rand = new();
-            const string queueName = "ParkingInformation";
+            const string QUEUE_NAME = "ParkingInformation";
+            const string AD = "AD";
+
+            //Redis caching for ad
+            int redisThreads = 1;
+            for (int i = 0; i < redisThreads; i++)
+            {
+                new Thread(() =>
+                {
+                    while (true)
+                    {
+                        string ad = _adClient.GetAdMockData();
+                        if (!string.IsNullOrEmpty(ad))
+                            RedisSingleton.Instance.GetDatabase().StringSet(AD, ad);
+                        Thread.Sleep(2000);
+                    }
+                })
+                { IsBackground = true }.Start();
+            }
 
             //Customers - ParkingInformation producers
             int customers = 1;
@@ -32,28 +51,18 @@ namespace ParkingAds.TUI
             {
                 new Thread(() =>
                 {
-                    ParkingInformationProducer producer = new(queueName);
+                    ParkingInformationProducer producer = new(QUEUE_NAME);
                     while (true)
                     {
-                        var parkingInfos = _parkingInformationClient.GetParkingInformations();
-                        ParkingInformation info = parkingInfos[rand.Next(0, parkingInfos.Count)];
-                        string ad = _adClient.GetAd();
-                        info.HttpEncodedAd = ad;
-                        ParkingInformationMessage message = producer.CreateParkingInformationMessage(info);
-                        producer.SendMessage(message);
-
-                        //if (parkingInfos.Count > 0)
-                        //{
-                        //    for (int i = 0; i < rand.Next(0, 5) + 1; i++)
-                        //    {
-                        //        var ad = _adClient.GetAd();
-                        //        ParkingInformation info = parkingInfos[rand.Next(0, parkingInfos.Count)];
-                        //        info.HttpEncodedAd = ad;
-                        //        ParkingInformationMessage message = producer.CreateParkingInformationMessage(info);
-                        //        producer.SendMessage(message);
-                        //    }
-                        //}
-                        //Thread.Sleep(rand.Next(0, 2500));
+                        List<ParkingInformation> parkingInfos = _parkingInformationClient.GetParkingInformationsMockData();
+                        if (parkingInfos.Count > 0)
+                        {
+                            ParkingInformation info = parkingInfos[rand.Next(0, parkingInfos.Count)];
+                            info.HttpEncodedAd = RedisSingleton.Instance.GetDatabase().StringGet(AD);
+                            ParkingInformationMessage message = producer.CreateParkingInformationMessage(info);
+                            producer.SendMessage(message);
+                        }
+                        Thread.Sleep(rand.Next(0, 500));
                     }
                 })
                 { IsBackground = true }.Start();
@@ -63,7 +72,7 @@ namespace ParkingAds.TUI
              * Wiretap consumer
              * Consumes the message and sends to another queue. If EnableWiretap is true it will print the message acting like were doing wiretap
             */
-            int wiretapConsumers = 4;
+            int wiretapConsumers = 1;
             for (int i = 0; i < wiretapConsumers; i++)
             {
                 new Thread(() =>
@@ -72,34 +81,33 @@ namespace ParkingAds.TUI
                     while (true)
                     {
                         consumer.ConsumeWiretapMessages();
+                        Thread.Sleep(rand.Next(0, 50));
                     }
                 })
                 { IsBackground = true }.Start();
             }
 
             //ParkingInformation consumers
-            int parkingInformationConsumers = 5;
+            int parkingInformationConsumers = 1;
             for (int i = 0; i < parkingInformationConsumers; i++)
             {
                 new Thread(() =>
                 {
-                    ParkingInformationConsumer consumer = new(queueName);
+                    ParkingInformationConsumer consumer = new(QUEUE_NAME);
                     int id = i + 1;
                     while (true)
                     {
                         var message = consumer.ConsumeMessage();
                         if (message != null)
-                        {
                             Console.WriteLine($"Id: {id} says {message.ParkingInformation}");
-                            //Thread.Sleep(rand.Next(0, 250));
-                        }
+                        Thread.Sleep(rand.Next(0, 100));
                     }
                 })
                 { IsBackground = true }.Start();
             }
 
             //Logging consumers
-            int loggingConsumers = 10;
+            int loggingConsumers = 1;
             for (int i = 0; i < loggingConsumers; i++)
             {
                 new Thread(() =>
@@ -108,6 +116,7 @@ namespace ParkingAds.TUI
                     while (true)
                     {
                         consumer.ConsumeLogs();
+                        Thread.Sleep(rand.Next(0, 25));
                     }
                 })
                 { IsBackground = true }.Start();

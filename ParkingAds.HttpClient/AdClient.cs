@@ -20,6 +20,12 @@ namespace ParkingAds.HttpClient
 
         public string GetAd()
         {
+            var ad = Get(AD_URL);
+            return ad.StatusCode == HttpStatusCode.OK ? ad.Content : string.Empty;
+        }
+
+        public string GetAdMockData()
+        {
             string randomAd = string.Empty;
             Random rand = new();
             for (int i = 0; i < 10; i++)
@@ -28,9 +34,6 @@ namespace ParkingAds.HttpClient
                 randomAd += value;
             }
             return randomAd;
-
-            var ad = Get(AD_URL);
-            return ad.StatusCode == HttpStatusCode.OK ? ad.Content : string.Empty;
         }
     }
 }

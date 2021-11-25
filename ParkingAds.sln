@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingAds.TUI", "ParkingAd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingAds.Model", "ParkingAds.Model\ParkingAds.Model.csproj", "{B8CAAFF1-4A9B-45FB-BFDC-0FB4F97F8AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingAds.MessageModel", "ParkingAds.MessageModel\ParkingAds.MessageModel.csproj", "{C2435D0C-C879-4ACD-BDD7-B64F1B2F2A96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingAds.MessageModel", "ParkingAds.MessageModel\ParkingAds.MessageModel.csproj", "{C2435D0C-C879-4ACD-BDD7-B64F1B2F2A96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingAds.HttpClient", "ParkingAds.HttpClient\ParkingAds.HttpClient.csproj", "{C6AC75B0-964D-4702-82AD-5AE0400DA02D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingAds.HttpClient", "ParkingAds.HttpClient\ParkingAds.HttpClient.csproj", "{C6AC75B0-964D-4702-82AD-5AE0400DA02D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingAds.Singleton", "ParkingAds.Singleton\ParkingAds.Singleton.csproj", "{DF1C56F2-BB21-40FF-97A6-7E4022A24663}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C6AC75B0-964D-4702-82AD-5AE0400DA02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6AC75B0-964D-4702-82AD-5AE0400DA02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6AC75B0-964D-4702-82AD-5AE0400DA02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1C56F2-BB21-40FF-97A6-7E4022A24663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1C56F2-BB21-40FF-97A6-7E4022A24663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1C56F2-BB21-40FF-97A6-7E4022A24663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1C56F2-BB21-40FF-97A6-7E4022A24663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

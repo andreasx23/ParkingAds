@@ -1,0 +1,11 @@
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\bin\Debug\net5.0\ParkingAds.Singleton.deps.json
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\bin\Debug\net5.0\ParkingAds.Singleton.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\bin\Debug\net5.0\ref\ParkingAds.Singleton.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\bin\Debug\net5.0\ParkingAds.Singleton.pdb
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.AssemblyInfoInputs.cache
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.AssemblyInfo.cs
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ref\ParkingAds.Singleton.dll
+C:\Users\andre\Desktop\ParkingAds\ParkingAds.Singleton\obj\Debug\net5.0\ParkingAds.Singleton.pdb

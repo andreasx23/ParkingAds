@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ParkingAds.HttpClient\ParkingAds.HttpClient.csproj" />
     <ProjectReference Include="..\ParkingAds.MessageBroker\ParkingAds.MessageBroker.csproj" />
+    <ProjectReference Include="..\ParkingAds.Singleton\ParkingAds.Singleton.csproj" />
   </ItemGroup>
 
   <ItemGroup>
