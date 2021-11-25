@@ -36,10 +36,10 @@ namespace ParkingAds.MessageBroker.Bases
             _shouldAutoDelete = shouldAutoDelete;
             _queueArguments = queueArguments;
 
-            QueueHostname = ConfigurationManager.AppSettings["HostName"];
-            if (int.TryParse(ConfigurationManager.AppSettings["Port"], out int port)) QueuePort = port;
-            QueueUsername = ConfigurationManager.AppSettings["UserName"];
-            QueuePassword = ConfigurationManager.AppSettings["Password"];
+            QueueHostname = ConfigurationManager.AppSettings["MessageBrokerHostName"];
+            if (int.TryParse(ConfigurationManager.AppSettings["MessageBrokerPort"], out int port)) QueuePort = port;
+            QueueUsername = ConfigurationManager.AppSettings["MessageBrokerUserName"];
+            QueuePassword = ConfigurationManager.AppSettings["MessageBrokerPassword"];
             _factory = new()
             {
                 HostName = QueueHostname,

@@ -13,8 +13,7 @@
           "NLog.Schema": "4.7.12",
           "ParkingAds.HttpClient": "1.0.0",
           "ParkingAds.MessageBroker": "1.0.0",
-          "ParkingAds.Singleton": "1.0.0",
-          "RestSharp": "106.13.0"
+          "ParkingAds.Singleton": "1.0.0"
         },
         "runtime": {
           "ParkingAds.TUI.dll": {}

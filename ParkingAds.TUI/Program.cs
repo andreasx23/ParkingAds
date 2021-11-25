@@ -33,7 +33,7 @@ namespace ParkingAds.TUI
                 {
                     while (true)
                     {
-                        string ad = _adClient.GetAdMockData();
+                        string ad = _adClient.GetAd();
                         if (!string.IsNullOrEmpty(ad))
                             RedisSingleton.Instance.GetDatabase().StringSet(ad, ad);
                         Thread.Sleep(2000);
@@ -43,7 +43,7 @@ namespace ParkingAds.TUI
             }
 
             //Customers - ParkingInformation producers
-            int customers = 1;
+            int customers = 5;
             for (int i = 0; i < customers; i++)
             {
                 new Thread(() =>
@@ -51,7 +51,7 @@ namespace ParkingAds.TUI
                     ParkingInformationProducer producer = new(QUEUE_NAME);
                     while (true)
                     {
-                        List<ParkingInformation> parkingInfos = _parkingInformationClient.GetParkingInformationsMockData();
+                        List<ParkingInformation> parkingInfos = _parkingInformationClient.GetParkingInformations();
                         if (parkingInfos.Count > 0)
                         {
                             ParkingInformation info = parkingInfos[rand.Next(0, parkingInfos.Count)];
@@ -60,7 +60,7 @@ namespace ParkingAds.TUI
                             ParkingInformationMessage message = producer.CreateParkingInformationMessage(info);
                             producer.SendMessage(message);
                         }
-                        Thread.Sleep(rand.Next(0, 500));
+                        //Thread.Sleep(rand.Next(0, 500));
                     }
                 })
                 { IsBackground = true }.Start();
@@ -70,7 +70,7 @@ namespace ParkingAds.TUI
              * Wiretap consumer
              * Consumes the message and sends to another queue. If EnableWiretap is true it will print the message acting like were doing wiretap
             */
-            int wiretapConsumers = 1;
+            int wiretapConsumers = 3;
             for (int i = 0; i < wiretapConsumers; i++)
             {
                 new Thread(() =>
@@ -79,14 +79,14 @@ namespace ParkingAds.TUI
                     while (true)
                     {
                         consumer.ConsumeWiretapMessages();
-                        Thread.Sleep(rand.Next(0, 50));
+                        //Thread.Sleep(rand.Next(0, 50));
                     }
                 })
                 { IsBackground = true }.Start();
             }
 
             //ParkingInformation consumers
-            int parkingInformationConsumers = 1;
+            int parkingInformationConsumers = 3;
             for (int i = 0; i < parkingInformationConsumers; i++)
             {
                 new Thread(() =>
@@ -97,14 +97,14 @@ namespace ParkingAds.TUI
                         var message = consumer.ConsumeMessage();
                         if (message != null)
                             Console.WriteLine($"Id: {Thread.GetCurrentProcessorId()} says {message.ParkingInformation}{Environment.NewLine}");
-                        Thread.Sleep(rand.Next(0, 100));
+                        //Thread.Sleep(rand.Next(0, 100));
                     }
                 })
                 { IsBackground = true }.Start();
             }
 
             //Logging consumers
-            int loggingConsumers = 1;
+            int loggingConsumers = 5;
             for (int i = 0; i < loggingConsumers; i++)
             {
                 new Thread(() =>
@@ -113,7 +113,7 @@ namespace ParkingAds.TUI
                     while (true)
                     {
                         consumer.ConsumeLogs();
-                        Thread.Sleep(rand.Next(0, 25));
+                        //Thread.Sleep(rand.Next(0, 25));
                     }
                 })
                 { IsBackground = true }.Start();

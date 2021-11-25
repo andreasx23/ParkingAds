@@ -18,8 +18,8 @@ namespace ParkingAds.Singleton
         
         static RedisSingleton()
         {
-            HOSTNAME = ConfigurationManager.AppSettings["HostName"];
-            PORT = ConfigurationManager.AppSettings["Port"];
+            HOSTNAME = ConfigurationManager.AppSettings["RedisHostName"];
+            PORT = ConfigurationManager.AppSettings["RedisPort"];
         }
 
         public static ConnectionMultiplexer Instance
