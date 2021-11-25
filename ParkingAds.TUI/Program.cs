@@ -1,13 +1,11 @@
 ﻿using Newtonsoft.Json;
 using NLog;
 using ParkingAds.HttpClient;
-using ParkingAds.MessageBroker;
 using ParkingAds.MessageBroker.Consumers;
 using ParkingAds.MessageBroker.Producers;
 using ParkingAds.MessageModel;
 using ParkingAds.Model;
 using ParkingAds.Singleton;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +24,6 @@ namespace ParkingAds.TUI
         {
             Random rand = new();
             const string QUEUE_NAME = "ParkingInformation";
-            const string AD = "AD";
 
             //Redis caching for ad
             int redisThreads = 1;
@@ -38,7 +35,7 @@ namespace ParkingAds.TUI
                     {
                         string ad = _adClient.GetAdMockData();
                         if (!string.IsNullOrEmpty(ad) && !ad.ToLower().Contains("something bad happened"))
-                            RedisSingleton.Instance.GetDatabase().StringSet(AD, ad);
+                            RedisSingleton.Instance.GetDatabase().StringSet(ad, ad);
                         Thread.Sleep(2000);
                     }
                 })
@@ -58,7 +55,8 @@ namespace ParkingAds.TUI
                         if (parkingInfos.Count > 0)
                         {
                             ParkingInformation info = parkingInfos[rand.Next(0, parkingInfos.Count)];
-                            info.HttpEncodedAd = RedisSingleton.Instance.GetDatabase().StringGet(AD);
+                            var randomAd = RedisSingleton.Instance.GetDatabase().KeyRandom();
+                            info.HttpEncodedAd = RedisSingleton.Instance.GetDatabase().StringGet(randomAd);
                             ParkingInformationMessage message = producer.CreateParkingInformationMessage(info);
                             producer.SendMessage(message);
                         }
@@ -94,12 +92,11 @@ namespace ParkingAds.TUI
                 new Thread(() =>
                 {
                     ParkingInformationConsumer consumer = new(QUEUE_NAME);
-                    int id = i + 1;
                     while (true)
                     {
                         var message = consumer.ConsumeMessage();
                         if (message != null)
-                            Console.WriteLine($"Id: {id} says {message.ParkingInformation}");
+                            Console.WriteLine($"Id: {Thread.GetCurrentProcessorId()} says {message.ParkingInformation}{Environment.NewLine}");
                         Thread.Sleep(rand.Next(0, 100));
                     }
                 })
